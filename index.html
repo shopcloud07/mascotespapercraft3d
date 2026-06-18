@@ -302,70 +302,6 @@
         font-weight: bold;
     }
 
-    /* UPSELL MODAL */
-    .upsell-overlay {
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0,0,0,0.85);
-        z-index: 9999;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        backdrop-filter: blur(5px);
-    }
-    .upsell-modal {
-        background: #111;
-        border: 4px solid var(--green);
-        border-radius: 20px;
-        width: 100%;
-        max-width: 500px;
-        padding: 40px 30px;
-        box-shadow: 0 15px 50px rgba(0,179,65,0.4);
-        text-align: center;
-        position: relative;
-        animation: modalSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    @keyframes modalSlideIn {
-        from { transform: translateY(50px) scale(0.9); opacity: 0; }
-        to { transform: translateY(0) scale(1); opacity: 1; }
-    }
-    .upsell-title { color: var(--green); font-size: 2.5rem; margin-top: 0; margin-bottom: 10px; line-height: 1.1; }
-    .upsell-desc { font-size: 1.1rem; color: #FFF; margin-bottom: 20px; }
-    .upsell-price { color: #FFF; font-size: 4rem; text-shadow: 0 4px 10px rgba(0,0,0,0.5); margin: 10px 0; line-height: 1; }
-    .upsell-price-old { text-decoration: line-through; color: #FF0000; font-size: 1.5rem; display: block; margin-bottom: -10px; }
-    
-    .upsell-btn-yes {
-        background: linear-gradient(to bottom, #00E676, #00B341);
-        color: #FFF;
-        font-size: 1.8rem;
-        padding: 20px 10px;
-        width: 100%;
-        border: 2px solid #FFF;
-        border-radius: 60px;
-        cursor: pointer;
-        text-transform: uppercase;
-        box-shadow: 0 10px 30px rgba(0, 179, 65, 0.5);
-        display: inline-block;
-        text-decoration: none;
-        margin-top: 20px;
-        font-weight: 900;
-        animation: pulse-green 2s infinite;
-    }
-    .upsell-btn-no {
-        display: block;
-        margin-top: 20px;
-        color: #777;
-        font-size: 0.85rem;
-        text-decoration: underline;
-        cursor: pointer;
-        background: none;
-        border: none;
-        width: 100%;
-        font-family: 'Nunito', sans-serif;
-    }
-    .upsell-btn-no:hover { color: #AAA; }
-
     /* GUARANTEE SECTION */
     .guarantee-section {
         background: linear-gradient(180deg, #CC0000, #660000);
@@ -695,18 +631,6 @@
         .guarantee-text { text-align: center; }
         .cta-btn { font-size: 1.15rem; padding: 15px 5px; width: 100%; white-space: normal; text-align: center; line-height: 1.2; }
         .section-title { font-size: 2rem; padding: 10px 20px; }
-        
-        /* Ajustes do Modal de Upsell no Mobile */
-        .upsell-overlay { padding: 10px; }
-        .upsell-modal { padding: 25px 15px; max-height: 95vh; overflow-y: auto; }
-        .upsell-title { font-size: 2rem; margin-bottom: 5px; }
-        .upsell-desc { font-size: 0.95rem; margin-bottom: 10px; line-height: 1.3; }
-        .upsell-modal .purchase-benefits { margin: 10px 0; gap: 8px; }
-        .upsell-modal .purchase-benefit-item { font-size: 0.9rem; }
-        .upsell-price-old { font-size: 1.2rem; margin-bottom: -5px; }
-        .upsell-price { font-size: 3rem; margin: 5px 0; }
-        .upsell-btn-yes { font-size: 1.3rem; padding: 15px 10px; margin-top: 15px; }
-        .upsell-btn-no { margin-top: 15px; font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -990,35 +914,6 @@
     </div>
   </section>
 
-  <!-- UPSELL MODAL -->
-  <div id="upsellModal" class="upsell-overlay">
-    <div class="upsell-modal" style="position: relative;">
-      <div onclick="closeUpsell()" style="position: absolute; top: 15px; left: 15px; cursor: pointer; color: #A0AEC0; font-size: 0.95rem; display: flex; align-items: center; gap: 5px;">
-        <span style="font-size: 1.2rem;">←</span> Voltar
-      </div>
-      <h2 class="upsell-title bangers" style="margin-top: 10px;">ESPERE! OFERTA EXCLUSIVA!</h2>
-      <p class="upsell-desc">Leve o <strong>COLEÇÃO COMPLETA</strong> com todos os bônus por uma pechincha!</p>
-      
-      <div class="purchase-benefits" style="margin: 20px 0;">
-        <div class="purchase-benefit-item">✅ 12.000 gibis Turma da Mônica</div>
-        <div style="background: rgba(201, 168, 75, 0.12); border: 1px solid var(--primary); border-radius: 10px; padding: 15px; margin-top: 15px; box-shadow: inset 0 0 15px rgba(201,168,75,0.12);">
-          <div style="font-weight: 900; color: var(--primary); margin-bottom: 10px; font-size: 1.1rem; text-align: left; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">🎁 BÔNUS EXCLUSIVOS:</div>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div class="purchase-benefit-item" style="color: #FFF;">✅ 10.000 HQ Heróis</div>
-            <div class="purchase-benefit-item" style="color: #FFF;">✅ 10.000 Mangás Clássicos</div>
-            <div class="purchase-benefit-item" style="color: #FFF;">✅ Turma da Mônica Jovem Completo</div>
-          </div>
-        </div>
-      </div>
-
-      <span class="upsell-price-old" style="font-weight: 900;">DE R$ 24,90</span>
-      <div class="upsell-price" style="font-weight: 900;">POR R$ 17,90</div>
-      
-      <a href="https://tilimcheckout.com/checkout?p=775df6513ff7137bab30e00b2914d7df" class="upsell-btn-yes bangers">⚡ RESGATAR PROMOÇÃO</a>
-      <a href="https://tilimcheckout.com/checkout?p=4cb9edc7258c94dd9f9b9ac24fd7e702" class="upsell-btn-no" style="display: block; text-decoration: none; text-align: center;">Não, quero o de 12,90</a>
-    </div>
-  </div>
-
   <footer>
     <div class="container">
       <img src="LOGO%20PAGINA.webp" alt="Mascotes Copa 2026" class="footer-logo" loading="lazy" decoding="async">
@@ -1050,16 +945,6 @@
             display = document.querySelector('#timer-display');
         startTimer(fifteenMinutes, display);
     };
-
-    // Upsell Modal Logic
-    function openUpsell(e) {
-        if (e) e.preventDefault();
-        document.getElementById('upsellModal').style.display = 'flex';
-    }
-
-    function closeUpsell() {
-        document.getElementById('upsellModal').style.display = 'none';
-    }
 
     // O carrossel agora é animado 100% via CSS para máxima fluidez (60fps)
 
