@@ -19,21 +19,62 @@
     async
     defer
   ></script>
-  <!-- MICROSOFT CLARITY -->
-  <script type="text/javascript">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Monte os Mascotes oficiais da Copa 2026 (Maple, Clutch e Zaya) em Papercraft 3D. Apenas tesoura e cola. Download imediato por R$ 29,90.">
+  <title>Mascotes da Copa 2026 - Papercraft 3D</title>
+
+  <!-- DNS Prefetch para domínios externos (fontes agora são locais, removido prefetch do Google Fonts) -->
+  <link rel="dns-prefetch" href="https://cdn.utmify.com.br">
+  <link rel="dns-prefetch" href="https://www.clarity.ms">
+
+  <!-- Preconnect Wistia: deixa a conexão pronta antes do vídeo carregar -->
+  <link rel="preconnect" href="https://fast.wistia.com">
+  <link rel="preconnect" href="https://fast.wistia.net" crossorigin>
+
+  <!-- Preload das fontes locais (carregam imediatamente, sem dependência externa) -->
+  <link rel="preload" href="fonts/Bangers-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Nunito-Black.woff" as="font" type="font/woff" crossorigin>
+
+  <!-- Microsoft Clarity adiado para não bloquear LCP -->
+  <script>
+    window.addEventListener('load', function() {
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "x8ssz1pgou");
+    });
   </script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mascotes da Copa 2026 - Papercraft 3D</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
+    /* FONTES LOCAIS - carregam do próprio servidor, sem dependência do Google Fonts */
+    @font-face {
+        font-family: 'Bangers';
+        src: url('fonts/Bangers-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        src: url('fonts/NunitoSans-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        src: url('fonts/Nunito-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        src: url('fonts/Nunito-Black.woff') format('woff');
+        font-weight: 900;
+        font-style: normal;
+        font-display: block;
+    }
     /* GLOBAL */
     :root {
         --primary: #F0CF80;
@@ -109,7 +150,7 @@
     .br-mobile-only { display: none; }
     .hero-subheadline {
         font-size: 1.4rem;
-        font-weight: 800;
+        font-weight: 900;
         margin-bottom: 19px;
         color: rgba(255, 255, 255, 0.8);
         max-width: 700px;
@@ -377,6 +418,16 @@
     .price-new { color: var(--green); font-size: 6rem; line-height: 1; display: block; text-shadow: 0 4px 15px rgba(0, 179, 65, 0.3); margin: 10px 0;}
     .price-pix { font-size: 2rem; color: var(--primary); text-transform: uppercase; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
 
+    /* PERFORMANCE: renderização adiada para seções fora da tela */
+    .badges-section,
+    .bonus-section,
+    .testimonials-section,
+    .guarantee-section,
+    .faq-section {
+        content-visibility: auto;
+        contain-intrinsic-size: 0 600px;
+    }
+
     /* CHECKLIST SECTION */
     .checklist-section {
         background-color: #0A1128;
@@ -434,6 +485,7 @@
         align-items: center;
         width: max-content;
         animation: scroll-carousel 15s linear infinite;
+        will-change: transform;
     }
     @keyframes scroll-carousel {
         0% { transform: translateX(0); }
@@ -633,7 +685,7 @@
         .hero-headline { font-size: 2.5rem; margin-bottom: 9px; }
         .br-mobile-only { display: inline; }
         .br-desktop-only { display: none; }
-        .hero-subheadline { margin-bottom: 14px; font-size: 1.15rem; font-weight: 800; }
+        .hero-subheadline { margin-bottom: 14px; font-size: 1.15rem; font-weight: 900; }
         .carousel-wrapper { margin: 10px 0 15px 0; padding: 0; }
         .carousel-item { width: 280px; height: 330px; margin: 0 8px; }
         .price-new { font-size: 4rem; }
@@ -680,8 +732,8 @@
     <div class="container">
 
       <h1 class="hero-headline bangers">
-        MONTE MASCOTES DA<br class="br-mobile-only">
-        COPA <br class="br-desktop-only">
+        MONTE MASCOTES <br class="br-mobile-only">
+        DA COPA <br class="br-desktop-only">
         <span class="highlight">INCRÍVEIS<br class="br-mobile-only"> DE PAPEL EM 3D</span>
       </h1>
       
@@ -692,14 +744,14 @@
       <!-- CARROSSEL INFINITO DESTAQUE -->
       <div class="carousel-wrapper">
         <div class="carousel-track">
-          <img src="CAR 01.webp" class="carousel-item" alt="Mascote Copa 2026">
-          <img src="CAR 02.webp" class="carousel-item" alt="Mascote Copa 2026">
-          <img src="CAR 03.webp" class="carousel-item" alt="Mascote Copa 2026">
-          <img src="CAR 04.webp" class="carousel-item" alt="Mascote Copa 2026">
-          <img src="CAR 01.webp" class="carousel-item" alt="Mascote Copa 2026">
-          <img src="CAR 02.webp" class="carousel-item" alt="Mascote Copa 2026">
-          <img src="CAR 03.webp" class="carousel-item" alt="Mascote Copa 2026">
-          <img src="CAR 04.webp" class="carousel-item" alt="Mascote Copa 2026">
+          <img src="CAR 01.webp" class="carousel-item" alt="Mascote Maple Copa 2026" width="370" height="470" fetchpriority="high" decoding="async">
+          <img src="CAR 02.webp" class="carousel-item" alt="Mascote Clutch Copa 2026" width="370" height="470" loading="lazy" decoding="async">
+          <img src="CAR 03.webp" class="carousel-item" alt="Mascote Zaya Copa 2026" width="370" height="470" loading="lazy" decoding="async">
+          <img src="CAR 04.webp" class="carousel-item" alt="Mascote Copa 2026" width="370" height="470" loading="lazy" decoding="async">
+          <img src="CAR 01.webp" class="carousel-item" alt="Mascote Maple Copa 2026" width="370" height="470" loading="lazy" decoding="async">
+          <img src="CAR 02.webp" class="carousel-item" alt="Mascote Clutch Copa 2026" width="370" height="470" loading="lazy" decoding="async">
+          <img src="CAR 03.webp" class="carousel-item" alt="Mascote Zaya Copa 2026" width="370" height="470" loading="lazy" decoding="async">
+          <img src="CAR 04.webp" class="carousel-item" alt="Mascote Copa 2026" width="370" height="470" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -716,10 +768,32 @@
       <h2 class="section-title bangers">O QUE VOCÊ VAI RECEBER:</h2>
       <h3 class="bangers" style="color: var(--primary); font-size: 2.2rem; margin-top: 0; letter-spacing: 2px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Coleção Exclusiva de Mascotes 3D</h3>
       
-      <!-- VSL CONTAINER -->
-      <div class="vsl-container">
-        <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/0kbf5coksw.js" async type="module"></script><style>wistia-player[media-id='0kbf5coksw']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/0kbf5coksw/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="0kbf5coksw" seo="false" aspect="0.5625"></wistia-player>
+      <!-- VSL CONTAINER - Carrega só quando o usuário chegar nessa seção -->
+      <div class="vsl-container" id="vsl-placeholder" style="padding-top: 177.78%; position: relative; background: #000;">
+        <div id="vsl-inner" style="position: absolute; inset: 0;"></div>
       </div>
+      <script>
+        (function() {
+          var loaded = false;
+          var observer = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting && !loaded) {
+              loaded = true;
+              var container = document.getElementById('vsl-inner');
+              // Carrega os scripts do Wistia
+              var s1 = document.createElement('script'); s1.src = 'https://fast.wistia.com/player.js'; s1.async = true;
+              var s2 = document.createElement('script'); s2.src = 'https://fast.wistia.com/embed/0kbf5coksw.js'; s2.async = true; s2.type = 'module';
+              var st = document.createElement('style'); st.textContent = "wistia-player[media-id='0kbf5coksw']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/0kbf5coksw/swatch');display:block;filter:blur(5px);padding-top:177.78%;}";
+              var wp = document.createElement('wistia-player'); wp.setAttribute('media-id','0kbf5coksw'); wp.setAttribute('seo','false'); wp.setAttribute('aspect','0.5625');
+              document.head.appendChild(st);
+              document.head.appendChild(s1);
+              document.head.appendChild(s2);
+              container.appendChild(wp);
+              observer.disconnect();
+            }
+          }, { rootMargin: '800px 0px 800px 0px' });
+          observer.observe(document.getElementById('vsl-placeholder'));
+        })();
+      </script>
       
       <div style="margin-top: 40px;">
         <a href="#checkout" class="cta-btn bangers" style="margin-top: 30px;">QUERO MONTAR AGORA!</a>
@@ -732,7 +806,7 @@
     <div class="container">
       <div class="badges-grid">
         <div class="badge-card">
-          <img src="Pdf_File_Icon_Png__Pdf__Pdf_Logo__Pdf_Icon_PNG_and_Vector_with_Transparent_Background_for_Free_Download-removebg-preview.png" class="badge-image" alt="Ícone PDF">
+          <img src="Pdf_File_Icon_Png__Pdf__Pdf_Logo__Pdf_Icon_PNG_and_Vector_with_Transparent_Background_for_Free_Download-removebg-preview.png" class="badge-image" alt="Ícone PDF" loading="lazy" decoding="async">
           <div class="badge-title">Formato PDF</div>
           <div class="badge-desc">Leve, Prático e Organizado</div>
         </div>
@@ -742,22 +816,22 @@
           <div class="badge-desc">Moldes em uma área de membros premium</div>
         </div>
         <div class="badge-card">
-          <img src="download_icon_download_icon_downloading_png-removebg-preview.png" class="badge-image" alt="Ícone Download">
+          <img src="download_icon_download_icon_downloading_png-removebg-preview.png" class="badge-image" alt="Ícone Download" loading="lazy" decoding="async">
           <div class="badge-title">Download Imediato</div>
           <div class="badge-desc">Logo após a confirmação</div>
         </div>
         <div class="badge-card">
-          <img src="Download_Gmail_icon_transparent_png__1_-removebg-preview.png" class="badge-image" alt="Ícone E-mail">
+          <img src="Download_Gmail_icon_transparent_png__1_-removebg-preview.png" class="badge-image" alt="Ícone E-mail" loading="lazy" decoding="async">
           <div class="badge-title">Envio via E-mail</div>
           <div class="badge-desc">Chega em 1 minuto</div>
         </div>
         <div class="badge-card">
-          <img src="Download_Whatsapp_logo_png__Whatsapp_icon_png__Whatsapp_transparent-removebg-preview.png" class="badge-image" alt="Ícone WhatsApp">
+          <img src="Download_Whatsapp_logo_png__Whatsapp_icon_png__Whatsapp_transparent-removebg-preview.png" class="badge-image" alt="Ícone WhatsApp" loading="lazy" decoding="async">
           <div class="badge-title">Envio via WhatsApp</div>
           <div class="badge-desc">Acesso na palma da mão</div>
         </div>
         <div class="badge-card">
-          <img src="Warranty_Verified_Png_Icon__Png_Icon__Png_Warranty__Verified_Png_PNG_and_Vector_with_Transparent_Background_for_Free_Download-removebg-preview.png" class="badge-image" alt="Ícone Acesso Vitalício">
+          <img src="Warranty_Verified_Png_Icon__Png_Icon__Png_Warranty__Verified_Png_PNG_and_Vector_with_Transparent_Background_for_Free_Download-removebg-preview.png" class="badge-image" alt="Ícone Acesso Vitalício" loading="lazy" decoding="async">
           <div class="badge-title">Acesso Vitalício</div>
           <div class="badge-desc">Pague uma vez, tenha pra sempre</div>
         </div>
@@ -773,7 +847,7 @@
         
         <div class="bonus-card">
           <div class="bonus-label">BÔNUS 01</div>
-          <img src="TAÇAS DA COPA DO MUNDO.webp" alt="Taças da Copa do Mundo" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)); border-radius: 10px;">
+          <img src="TAÇAS DA COPA DO MUNDO.webp" alt="Taças da Copa do Mundo" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)); border-radius: 10px;" loading="lazy" decoding="async">
           <div class="bonus-title bangers">Taças da Copa do Mundo</div>
           <div class="bonus-desc">Ganhe 3 moldes exclusivos das Taças da Copa do Mundo em Papercraft 3D.</div>
           <div class="bonus-price"><span>De: R$ 27,90</span> | Grátis Hoje</div>
@@ -781,7 +855,7 @@
 
         <div class="bonus-card">
           <div class="bonus-label">BÔNUS 02</div>
-          <img src="BOLAS DA COPA.webp" alt="Bolas da Copa" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)); border-radius: 10px;">
+          <img src="BOLAS DA COPA.webp" alt="Bolas da Copa" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)); border-radius: 10px;" loading="lazy" decoding="async">
           <div class="bonus-title bangers">Bolas das Copas</div>
           <div class="bonus-desc">Ganhe 10 moldes incríveis de Bolas das Copas em Papercraft 3D para montar!</div>
           <div class="bonus-price"><span>De: R$ 39,90</span> | Grátis Hoje</div>
@@ -789,7 +863,7 @@
 
         <div class="bonus-card">
           <div class="bonus-label">BÔNUS 03</div>
-          <img src="COLORINDO - EXERCICIOS DA COPA.webp" alt="Colorindo + Exercícios da Copa" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)); border-radius: 10px;">
+          <img src="COLORINDO - EXERCICIOS DA COPA.webp" alt="Colorindo + Exercícios da Copa" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)); border-radius: 10px;" loading="lazy" decoding="async">
           <div class="bonus-title bangers">Colorindo + Exercícios da Copa</div>
           <div class="bonus-desc">Ganhe arquivos exclusivos para colorir e de exercícios sobre a Copa do Mundo.</div>
           <div class="bonus-price"><span>De: R$ 34,90</span> | Grátis Hoje</div>
@@ -805,19 +879,19 @@
       <h2 class="bangers" style="font-size: 3rem; color: var(--primary);">O QUE DIZEM NOSSOS CLIENTES</h2>
       <div class="testi-grid">
         <div class="testi-card">
-          <img src="DEP 01.webp" alt="Juliane" class="testi-avatar">
+          <img src="DEP 01.webp" alt="Juliane" class="testi-avatar" loading="lazy" decoding="async">
           <div class="testi-stars">★★★★★</div>
           <div class="testi-text">"Gente, que atividade maravilhosa! Comprei para montar com meus filhos no fim de semana. O Maple ficou sensacional! Os arquivos são muito fáceis de entender."</div>
           <div class="testi-author">- Juliane Costa, 38 anos</div>
         </div>
         <div class="testi-card">
-          <img src="DEP 02.webp" alt="Carla" class="testi-avatar">
+          <img src="DEP 02.webp" alt="Carla" class="testi-avatar" loading="lazy" decoding="async">
           <div class="testi-stars">★★★★★</div>
           <div class="testi-text">"O Clutch e a Zaya ficaram maravilhosos na estante! A montagem é terapêutica e super divertida de fazer. Vale muito a pena!"</div>
           <div class="testi-author">- Carla Mendes, 41 anos</div>
         </div>
         <div class="testi-card">
-          <img src="DEP 03.webp" alt="Leandro" class="testi-avatar">
+          <img src="DEP 03.webp" alt="Leandro" class="testi-avatar" loading="lazy" decoding="async">
           <div class="testi-stars">★★★★★</div>
           <div class="testi-text">"Comprei no PIX e chegou em menos de 1 minuto no WhatsApp e no e-mail. Imprimi em folha 180g e a montagem ficou extremamente firme e bonita. Nota 10!"</div>
           <div class="testi-author">- Leandro Silva, 27 anos</div>
@@ -867,7 +941,7 @@
   <!-- GUARANTEE SECTION -->
   <section class="guarantee-section" id="garantia">
     <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-      <img src="GARANTIA.webp" alt="Selo de Garantia" class="guarantee-badge">
+      <img src="GARANTIA.webp" alt="Selo de Garantia" class="guarantee-badge" loading="lazy" decoding="async">
       <div style="text-align: center; max-width: 700px;">
         <h2 class="bangers">GARANTIA DE 7 DIAS</h2>
         <p>Temos tanta certeza que você vai amar os moldes que oferecemos uma garantia incondicional. Se você apenas visualizar e não gostar dos modelos ou simplesmente mudar de ideia, nós devolvemos 100% do seu dinheiro. Sem perguntas, sem letras miúdas. Basta um e-mail.</p>
@@ -947,7 +1021,7 @@
 
   <footer>
     <div class="container">
-      <img src="LOGO%20PAGINA.webp" alt="Mascotes Copa 2026" class="footer-logo">
+      <img src="LOGO%20PAGINA.webp" alt="Mascotes Copa 2026" class="footer-logo" loading="lazy" decoding="async">
       <p>Mascotes Copa 2026  © 2026 - Todos os direitos reservados.</p>
       <p>Este site não faz parte e não tem afiliação com o Facebook, Google ou a FIFA.</p>
     </div>
